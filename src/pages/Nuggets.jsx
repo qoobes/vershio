@@ -57,7 +57,7 @@ const Nuggets = props => {
   if (!loaded)
     return (
       <Layout>
-        <Box height="90vh" d="flex" alignItems="center" justifyContent="center">
+        <Box height="100%" d="flex" alignItems="center" justifyContent="center">
           <Loader w="80%" h="10rem" rounded="full" />
         </Box>
       </Layout>
