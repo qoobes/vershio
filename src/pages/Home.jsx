@@ -8,8 +8,8 @@ const Home = () => {
   useEffect(() => setLoaded(true), []);
 
   return (
-    <Layout>
-      <ScaleFade in={loaded}>
+    <ScaleFade in={loaded}>
+      <Layout>
         <Box
           w="100%"
           d="flex"
@@ -59,8 +59,8 @@ const Home = () => {
             Start Now.
           </Button>
         </Box>
-      </ScaleFade>
-    </Layout>
+      </Layout>
+    </ScaleFade>
   );
 };
 export default Home;
