@@ -7,7 +7,7 @@ const RepoCard = ({ title, tags, to }) => (
   <Box
     as={RouterLink}
     to={to}
-    w="30rem"
+    w="100%"
     h="8rem"
     p={8}
     rounded="xl"

@@ -1,6 +1,7 @@
 import { CloseIcon, Search2Icon } from "@chakra-ui/icons";
 import {
   Box,
+  Fade,
   Heading,
   Input,
   InputGroup,
@@ -64,69 +65,71 @@ const Nuggets = props => {
 
   return (
     <Layout>
-      <Box w="100%" height="100%" p="5rem">
-        <Box
-          id="title-search"
-          d="flex"
-          justifyContent="space-between"
-          alignItems="center"
-        >
-          {keyword ? (
-            <Heading fontSize="x-large" fontWeight="normal">
-              Searching for <strong>{keyword}</strong>
-            </Heading>
-          ) : (
-            <Box>
-              <Heading fontWeight="normal" fontSize="x-large" mb={4}>
-                <strong>{repo.name}</strong> repo
+      <Fade in={loaded}>
+        <Box w="100%" height="100%" p="5rem">
+          <Box
+            id="title-search"
+            d="flex"
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            {keyword ? (
+              <Heading fontSize="x-large" fontWeight="normal">
+                Searching for <strong>{keyword}</strong>
               </Heading>
-              {repo.tags.map((tag, key) => (
-                <Tag mr={3} key={key} px={5} rounded="full" py={1}>
-                  {tag}
-                </Tag>
-              ))}
-            </Box>
-          )}
-          <Box>
-            <InputGroup position="relative">
-              <InputLeftElement
-                zIndex="-1"
-                children={<Search2Icon color="gray.400" />}
-              />
-              <Input
-                w="20rem"
-                h="2.5rem"
-                value={keyword}
-                position="relative"
-                onChange={e => setKeyword(e.target.value)}
-              />
-
-              {keyword && (
-                <InputRightElement
-                  children={
-                    <CloseIcon
-                      color="gray.400"
-                      fontSize="sm"
-                      cursor="pointer"
-                      onClick={() => setKeyword("")}
-                    />
-                  }
+            ) : (
+              <Box>
+                <Heading fontWeight="normal" fontSize="x-large" mb={4}>
+                  <strong>{repo.name}</strong> repo
+                </Heading>
+                {repo.tags.map((tag, key) => (
+                  <Tag mr={3} key={key} px={5} rounded="full" py={1}>
+                    {tag}
+                  </Tag>
+                ))}
+              </Box>
+            )}
+            <Box>
+              <InputGroup position="relative">
+                <InputLeftElement
+                  zIndex="-1"
+                  children={<Search2Icon color="gray.400" />}
                 />
-              )}
-            </InputGroup>
+                <Input
+                  w="20rem"
+                  h="2.5rem"
+                  value={keyword}
+                  position="relative"
+                  onChange={e => setKeyword(e.target.value)}
+                />
+
+                {keyword && (
+                  <InputRightElement
+                    children={
+                      <CloseIcon
+                        color="gray.400"
+                        fontSize="sm"
+                        cursor="pointer"
+                        onClick={() => setKeyword("")}
+                      />
+                    }
+                  />
+                )}
+              </InputGroup>
+            </Box>
           </Box>
+          <NuggetView
+            nuggets={
+              keyword
+                ? nuggets.filter(nugget =>
+                    nugget.content.toLowerCase().includes(keyword.toLowerCase())
+                  )
+                : nuggets
+            }
+            summary={repo.summary}
+          />
         </Box>
-        <NuggetView
-          nuggets={
-            keyword
-              ? nuggets.filter(nugget =>
-                  nugget.content.toLowerCase().includes(keyword.toLowerCase())
-                )
-              : nuggets
-          }
-          summary={repo.summary}
-        />
-      </Box>
+      </Fade>
     </Layout>
   );
 };

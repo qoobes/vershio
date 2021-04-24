@@ -5,7 +5,7 @@ const RepoView = ({ repos, history }) => (
   <Box mt={10}>
     <Grid
       gridTemplateColumns="repeat(auto-fill, minmax(30rem, 1fr))"
-      gap="1.1rem"
+      gap="2rem"
     >
       {repos.map((repo, key) => (
         <RepoCard
