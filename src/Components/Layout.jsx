@@ -9,7 +9,7 @@ import {
   MenuButton,
   MenuDivider,
   MenuItem,
-  MenuList,
+  MenuList
 } from "@chakra-ui/react";
 import { Link as RouterLink, useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/authContext";
@@ -48,7 +48,7 @@ const Layout = ({ children }) => {
           vershio
         </Heading>
         <Box id="items" d="flex" justifyContent="space-between">
-          <Button variant="ghost" as={RouterLink} to="/user" mr="4">
+          <Button variant="ghost" as={RouterLink} to="/" mr="4">
             Home
           </Button>
           <Button variant="ghost" as={RouterLink} to="/repos" mr="4">
