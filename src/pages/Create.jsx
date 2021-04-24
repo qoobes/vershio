@@ -83,6 +83,7 @@ const Create = () => {
         duration: 1500,
       });
 
+    console.log(contentType);
     // call the api
     // api dot call yourself please ffs
   };
