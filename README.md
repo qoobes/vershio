@@ -1,0 +1,3 @@
+# vershio
+
+indexes blah blah
