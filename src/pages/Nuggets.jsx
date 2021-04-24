@@ -7,11 +7,11 @@ import {
   InputGroup,
   InputLeftElement,
   InputRightElement,
-  Skeleton,
   Tag,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import Layout from "../Components/Layout";
+import { Loader } from "../Components/Loader";
 import NuggetView from "../Components/NuggetView";
 import { useAuth } from "../contexts/authContext";
 import firebase from "../firebase";
@@ -58,7 +58,7 @@ const Nuggets = props => {
     return (
       <Layout>
         <Box height="90vh" d="flex" alignItems="center" justifyContent="center">
-          <Skeleton w="80%" h="10rem" rounded="full" />
+          <Loader w="80%" h="10rem" rounded="full" />
         </Box>
       </Layout>
     );

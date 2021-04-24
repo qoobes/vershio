@@ -8,12 +8,12 @@ import {
   InputGroup,
   InputLeftElement,
   InputRightElement,
-  Skeleton,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { v4 as uuid } from "uuid";
 import Layout from "../Components/Layout";
+import { Loader } from "../Components/Loader";
 import RepoView from "../Components/RepoView";
 import { useAuth } from "../contexts/authContext";
 import firebase from "../firebase";
@@ -48,7 +48,7 @@ const Repos = () => {
     return (
       <Layout>
         <Box height="90vh" d="flex" alignItems="center" justifyContent="center">
-          <Skeleton w="80%" h="10rem" rounded="full" />
+          <Loader w="80%" h="10rem" rounded="full" />
         </Box>
       </Layout>
     );
