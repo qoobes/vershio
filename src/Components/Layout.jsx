@@ -21,12 +21,15 @@ const Layout = ({ children }) => {
   const history = useHistory();
 
   return (
-    <>
+    <Box pt="4.5rem">
       <Box
         as="nav"
         w="100%"
         h="4.5rem"
         d="flex"
+        top="0"
+        position="fixed"
+        zIndex="999"
         justifyContent="space-around"
         alignItems="center"
         bgColor="#ffffff"
@@ -134,7 +137,7 @@ const Layout = ({ children }) => {
         </Box>
       </Box>
       {children}
-    </>
+    </Box>
   );
 };
 

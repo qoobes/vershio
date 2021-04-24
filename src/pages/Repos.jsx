@@ -1,4 +1,4 @@
-import { CloseIcon, Search2Icon } from "@chakra-ui/icons";
+import { AddIcon, CloseIcon, Search2Icon } from "@chakra-ui/icons";
 import {
   Box,
   Button,
@@ -10,7 +10,7 @@ import {
   InputRightElement,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { Link as RouterLink, useHistory } from "react-router-dom";
 import { v4 as uuid } from "uuid";
 import Layout from "../Components/Layout";
 import { Loader } from "../Components/Loader";
@@ -83,7 +83,17 @@ const Repos = () => {
                 Searching for <strong>{keyword}</strong>
               </Heading>
             ) : (
-              <Heading>Your Repos</Heading>
+              <Box d="flex" justifyContent="center" alignItems="center">
+                <Heading>Your Repos</Heading>
+                <Button
+                  ml={5}
+                  as={RouterLink}
+                  to="/create"
+                  leftIcon={<AddIcon />}
+                >
+                  Add New Repo
+                </Button>
+              </Box>
             )}
             <Box>
               <InputGroup position="relative">
