@@ -98,7 +98,7 @@ const Feed = () => {
               <RepoCard
                 tags={repo.tags}
                 title={repo.name}
-                to={repo.id}
+                to={`/repos/${repo.id}`}
                 key={key}
               />
             ))}

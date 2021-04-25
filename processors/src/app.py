@@ -176,7 +176,7 @@ def text_to_gpt3():
 
     bestTextChunks = segment(text)
     
-    return bestTextChunks
+    return json.dumps(bestTextChunks)
 
         # if key is invalid stop the function there
 if __name__ == "__main__":

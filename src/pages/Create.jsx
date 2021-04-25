@@ -12,14 +12,18 @@ import {
   Textarea,
   useToast,
 } from "@chakra-ui/react";
+import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import ImageUploader from "react-images-upload";
+import { useHistory } from "react-router-dom";
 import { v4 as uuid } from "uuid";
 import Layout from "../Components/Layout";
+import { useAuth } from "../contexts/authContext";
 import firebase from "../firebase";
 
 const Create = () => {
   const toast = useToast();
+  const history = useHistory();
 
   const [loaded, setLoaded] = useState();
 
@@ -28,6 +32,11 @@ const Create = () => {
   const [isUploading, setIsUploading] = useState(false);
   const [contentReady, setContentReady] = useState(false);
   const [contentType, setContentType] = useState("image");
+
+  const { currentUser } = useAuth();
+
+  const nameRef = useRef();
+  const tagRef = useRef();
 
   const textRef = useRef();
 
@@ -48,6 +57,7 @@ const Create = () => {
         .then(snapshot => (urls = urls.concat(snapshot.ref.fullPath)))
         .then(() => {
           if (urls.length === files.length) {
+            console.log(urls);
             setContent(urls);
             setIsUploading(false);
             setContentReady(true);
@@ -75,7 +85,12 @@ const Create = () => {
         duration: 1500,
       });
 
-    if (content === "" || content === [])
+    const name = nameRef.current.value;
+    let tags = tagRef.current.value;
+
+    if (!tags) tags = ["new"];
+
+    if (content === "" || content === [] || !name)
       return toast({
         title: "Content not found",
         description: "Please refresh the page and try again",
@@ -84,6 +99,17 @@ const Create = () => {
       });
 
     console.log(contentType);
+
+    history.push("/repos");
+    axios.post("https://us-central1-vershio-hawt.cloudfunctions.net/addRepo", {
+      name,
+      tags: tags !== ["new"] ? tags.split(",") : ["new"],
+      userId: currentUser.uid,
+      sourceType: contentType,
+      videoUrl: content[0],
+      imageUrls: content,
+      text: content,
+    });
     // call the api
     // api dot call yourself please ffs
   };
@@ -116,6 +142,7 @@ const Create = () => {
                 fontSize="lg"
                 border="1px solid transparent"
                 transition="border 200ms, background-color 200ms"
+                ref={nameRef}
                 _focus={{
                   bgColor: "white",
                   border: "1px solid gray",
@@ -133,6 +160,7 @@ const Create = () => {
               <Input
                 border="1px solid transparent"
                 fontSize="lg"
+                ref={tagRef}
                 transition="border 200ms, background-color 200ms"
                 _focus={{
                   bgColor: "white",
@@ -290,6 +318,7 @@ const Create = () => {
                     w="100%"
                     rows="5"
                     background="linear-gradient(90.1deg, #FF6D6D 0.13%, #DF9AFF 99.96%)"
+                    ref={textRef}
                     mb={8}
                     bgClip="text"
                     transition="border 200ms, background-color 200ms"
@@ -323,7 +352,6 @@ const Create = () => {
                       boxShadow: "none",
                     }}
                     onClick={saveText}
-                    ref={textRef}
                   >
                     Save Text
                   </Button>

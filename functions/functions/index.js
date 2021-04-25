@@ -17,6 +17,7 @@ const localSecret = "CONGPilDnoMinEThonYAnkoLViTypOlmStOd";
 
 exports.end = functions.https.onRequest((req, res) => {
   cors(req, res, () => {
+    res.set("Access-Control-Allow-Origin", "*");
     const { secret } = req.body;
     if (secret !== localSecret)
       return res.json({ code: 401, error: "Unauthorized" });
@@ -60,6 +61,7 @@ exports.end = functions.https.onRequest((req, res) => {
 
 exports.addRepo = functions.https.onRequest((req, res) => {
   cors(req, res, () => {
+    res.set("Access-Control-Allow-Origin", "*");
     const { name, userId, tags, sourceType } = req.body;
 
     if (!name || !userId || !tags || !sourceType)
@@ -82,7 +84,7 @@ exports.addRepo = functions.https.onRequest((req, res) => {
         console.log(videoUrl);
         // pass da torch on to the next cloud function
 
-        axios.post("https://google.com/yeahman", {
+        axios.post("https://pls-c3twmm6vua-uc.a.run.app/transcribe", {
           secret: localSecret,
           name,
           userId,
@@ -96,7 +98,7 @@ exports.addRepo = functions.https.onRequest((req, res) => {
         console.log(imageUrls);
         // pass it on
 
-        axios.post("https://google.com/imageone", {
+        axios.post("https://pls-c3twmm6vua-uc.a.run.app/ocr", {
           secret: localSecret,
           name,
           userId,
@@ -111,7 +113,7 @@ exports.addRepo = functions.https.onRequest((req, res) => {
 
         // this one goes straight to gpt3
 
-        axios.post("https://google.com/textone", {
+        axios.post("https://pls-c3twmm6vua-uc.a.run.app/text", {
           secret: localSecret,
           name,
           userId,
