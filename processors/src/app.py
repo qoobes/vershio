@@ -52,6 +52,17 @@ def ocr():
         text += localText
 
     segText = segment(text)
+
+    url = "https://us-central1-vershio-hawt.cloudfunctions.net/end"
+    data = {
+        "secret" : "CONGPilDnoMinEThonYAnkoLViTypOlmStOd",
+        "name" : name,
+        "userId" : userId,
+        "nuggets" : segText,
+    }
+
+    requests.post(url=url, data=data)
+
     return json.dumps(segText)
 
 def random_token():
@@ -154,6 +165,16 @@ def audio_to_text():
     text = text_from_large_clip(audio_file)
 
     betterTextChunks = segment(text)
+
+    url = "https://us-central1-vershio-hawt.cloudfunctions.net/end"
+    data = {
+        "secret" : "CONGPilDnoMinEThonYAnkoLViTypOlmStOd",
+        "name" : name,
+        "userId" : userId,
+        "nuggets" : betterTextChunks,
+    }
+
+    requests.post(url=url, data=data)
     return betterTextChunks
 
 @app.route("/text", methods=["POST"])
@@ -175,6 +196,15 @@ def text_to_gpt3():
         return {"code": 400, "error": "Bad request, missing arguments"}
 
     bestTextChunks = segment(text)
+    url = "https://us-central1-vershio-hawt.cloudfunctions.net/end"
+    data = {
+        "secret" : "CONGPilDnoMinEThonYAnkoLViTypOlmStOd",
+        "name" : name,
+        "userId" : userId,
+        "nuggets" : betterTextChunks,
+    }
+
+    requests.post(url=url, data=data)
     
     return json.dumps(bestTextChunks)
 

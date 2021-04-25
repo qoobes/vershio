@@ -16,7 +16,6 @@ const Feed = () => {
     firebase
       .firestore()
       .collection("repos")
-      .where("tags", "array-contains", "new")
       .onSnapshot(snapshot => {
         let docs = snapshot.docs;
         docs = docs.map(doc => doc.data());
