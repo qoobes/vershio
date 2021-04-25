@@ -11,7 +11,6 @@ import {
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { Link as RouterLink, useHistory } from "react-router-dom";
-import { v4 as uuid } from "uuid";
 import Layout from "../Components/Layout";
 import { Loader } from "../Components/Loader";
 import RepoView from "../Components/RepoView";
@@ -53,21 +52,6 @@ const Repos = () => {
       </Layout>
     );
 
-  const create = () => {
-    const id = uuid();
-    firebase
-      .firestore()
-      .collection("repos")
-      .doc(id)
-      .set({
-        id,
-        name: "hey there people im bobby brown",
-        tags: ["hi", "there", "ppls"],
-        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-        creatorId: currentUser.uid,
-      });
-  };
-
   return (
     <Layout>
       <Fade in={loaded}>
@@ -108,7 +92,6 @@ const Repos = () => {
                   position="relative"
                   onChange={e => setKeyword(e.target.value)}
                 />
-                <Button onClick={create}>hello</Button>
 
                 {keyword && (
                   <InputRightElement
