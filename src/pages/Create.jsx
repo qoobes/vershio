@@ -12,7 +12,6 @@ import {
   Textarea,
   useToast,
 } from "@chakra-ui/react";
-import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import ImageUploader from "react-images-upload";
 import { useHistory } from "react-router-dom";
@@ -101,17 +100,10 @@ const Create = () => {
     console.log(contentType);
 
     history.push("/repos");
-    axios.post("https://us-central1-vershio-hawt.cloudfunctions.net/addRepo", {
-      name,
-      tags: tags !== ["new"] ? tags.split(",") : ["new"],
-      userId: currentUser.uid,
-      sourceType: contentType,
-      videoUrl: content[0],
-      imageUrls: content,
-      text: content,
-    });
-    // call the api
-    // api dot call yourself please ffs
+    console.error(
+      "this is a demo due to the rules provided by OpenAI, we can't have gpt3 running live."
+    );
+    // the api is disabled
   };
 
   return (

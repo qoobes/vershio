@@ -6,7 +6,7 @@ from gpt import GPT, Example
 
 
 def segment(prompt):
-    openai.api_key = "sk-4LZVo4FJ1wRYQ8RRsrN1jwVsNJdmy4orkf0QAZ80"
+    openai.api_key = "<API-KEY-REMOVED>"
 
     gpt = GPT(temperature=0, max_tokens=500, append_output_prefix_to_query=False, output_prefix="")
 
