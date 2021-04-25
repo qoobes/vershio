@@ -96,6 +96,9 @@ const Nuggets = props => {
                   children={<Search2Icon color="gray.400" />}
                 />
                 <Input
+                  bgColor="#ffffff88"
+                  _hover={{ filter: "brightness(1.1)" }}
+                  _focus={{ bgColor: "#ffffff00", border: "1px solid white" }}
                   w="20rem"
                   h="2.5rem"
                   value={keyword}
