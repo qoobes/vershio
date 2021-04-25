@@ -12,7 +12,9 @@ const RepoCard = ({ title, tags, to }) => (
     p={8}
     rounded="xl"
     position="relative"
-    boxShadow="2px 2px 4px 0px #c0c0c0"
+    bgColor="#ffffffaa"
+    border="3px solid white"
+    // boxShadow="2px 2px 4px 0px #c0c0c0"
     transition="box-shadow 250ms, border 200ms"
     cursor="pointer"
     _hover={{
@@ -28,7 +30,9 @@ const RepoCard = ({ title, tags, to }) => (
     </Heading>
     <Box position="absolute" bottom="8" left="8">
       {tags.map(tag => (
-        <Tag mr={3}>{tag}</Tag>
+        <Tag mr={3} bgColor="#ffffff">
+          {tag}
+        </Tag>
       ))}
     </Box>
     <ChevronRightIcon

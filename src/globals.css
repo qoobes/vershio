@@ -6,6 +6,21 @@ body {
   padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background: radial-gradient(
+      53.65% 206.76% at 103.65% 65.8%,
+      rgba(234, 53, 53, 0.2) 0%,
+      rgba(16, 198, 255, 0.09) 100%
+    ),
+    radial-gradient(
+      69.38% 88.62% at 77.32% 20.35%,
+      rgba(234, 53, 194, 0.19) 0%,
+      rgba(103, 139, 230, 0.0864401) 69.79%,
+      rgba(16, 198, 255, 0.0171) 100%
+    ) !important;
+
+  background-repeat: no-repeat !important;
+  background-size: 100vw 100vh !important;
 }
 
 code {

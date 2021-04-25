@@ -57,8 +57,8 @@ const Layout = ({ children }) => {
           <Button variant="ghost" as={RouterLink} to="/repos" mr="4">
             Repos
           </Button>
-          <Button variant="ghost" as={RouterLink} to="/community" mr="4">
-            Community
+          <Button variant="ghost" as={RouterLink} to="/feed" mr="4">
+            Feed
           </Button>
           {!currentUser ? (
             <>

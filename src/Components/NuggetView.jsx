@@ -4,7 +4,7 @@ import NuggetCard from "./NuggetCard";
 const NuggetView = ({ nuggets, summary }) => (
   <>
     <Box mt={10} d="flex" justifyContent="space-between">
-      <Box w="100%" bgColor="gray.100" p={8} rounded="xl">
+      <Box w="100%" bgColor="#ffffffaa" p={8} rounded="xl">
         <Heading fontSize="x-large" mb={8}>
           Nuggets
         </Heading>
@@ -19,15 +19,14 @@ const NuggetView = ({ nuggets, summary }) => (
         height="100%"
         ml={10}
         p={8}
-
-    transition="box-shadow 250ms"
-    cursor="pointer"
-    _hover={{
-      boxShadow: "0px 2px 8px 2px #c0c0c0",
-    }}
-    _active={{
-      boxShadow: "none",
-    }}
+        transition="box-shadow 250ms"
+        cursor="pointer"
+        _hover={{
+          boxShadow: "0px 2px 8px 2px #c0c0c0",
+        }}
+        _active={{
+          boxShadow: "none",
+        }}
       >
         <Heading fontSize="x-large">Summary</Heading>
         <Text mt={5} fontSize="large" lineHeight="1.5">

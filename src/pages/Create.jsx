@@ -235,6 +235,7 @@ const Create = () => {
                   <Box>
                     <Image src="icons/Upload.png" />
                     <ImageUploader
+                      singleImage
                       style={{
                         boxShadow: "0px 2px 5px -1px gray",
                         borderRadius: "0.5rem",
@@ -261,6 +262,7 @@ const Create = () => {
                   <Box>
                     <Image src="icons/Upload.png" />
                     <ImageUploader
+                      singleImage
                       style={{
                         boxShadow: "0px 2px 5px -1px gray",
                         borderRadius: "0.5rem",
