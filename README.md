@@ -1,5 +1,5 @@
 # Vershio
-[![Vershio Page](https://res.cloudinary.com/devpost/image/fetch/s--MPCMG1oA--/c_limit,f_auto,fl_lossy,q_auto:eco,w_900/http://u.filein.io/URH9q5DsSC.png)][https://youtu.be/sR23-Sf2pS0]
+[![Vershio Page](https://res.cloudinary.com/devpost/image/fetch/s--MPCMG1oA--/c_limit,f_auto,fl_lossy,q_auto:eco,w_900/http://u.filein.io/URH9q5DsSC.png)][https://www.youtube.com/watch?v=sR23-Sf2pS0 "Vershio"]
 
 ## 💡 Inspiration
 
