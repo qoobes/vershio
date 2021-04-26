@@ -7,7 +7,7 @@ import uuid
 
 def set_openai_key(key):
     """Sets OpenAI key."""
-    openai.api_key = key
+    openai.api_key = GPT_KEY
 
 
 class Example:
