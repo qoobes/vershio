@@ -1,12 +1,11 @@
 # Vershio
-[![Vershio Page](https://res.cloudinary.com/devpost/image/fetch/s--MPCMG1oA--/c_limit,f_auto,fl_lossy,q_auto:eco,w_900/http://u.filein.io/URH9q5DsSC.png)][https://www.youtube.com/watch?v=sR23-Sf2pS0 "Vershio"]
 
 ## 💡 Inspiration
 
 We wanted to make something that would help students out.  As students, we know the importance of having access to knowledge in an easy to understand words and phrases. So we designed something that will give students everywhere access to this information, add to our index, and share knowledge.
 
 ## 💻 What it does
-
+![Vershio Page](https://res.cloudinary.com/devpost/image/fetch/s--MPCMG1oA--/c_limit,f_auto,fl_lossy,q_auto:eco,w_900/http://u.filein.io/URH9q5DsSC.png)
 
 - Take a picture or upload a video copyright-free using our web app. 
 - Our state-of-the-art machine learning platform allows us to extract only what's truly important.
@@ -38,4 +37,9 @@ We learned a lot about how to use GPT-3 as well as what can or cannot be done. H
 ## 🔜 What's next for _Vershio_
 
 Community Feature. We'd like to use Discourse forum boards to enable people to discuss features as well as talk about materials that can be found on the website! We also hope to launch an actual beta version so more people can actually use this! We foresee a lot of potential for this. IOS & Android App Version
+
+## Try It OUT!
+https://www.youtube.com/watch?v=sR23-Sf2pS0
+https://vershio.vercel.app/
+
 
