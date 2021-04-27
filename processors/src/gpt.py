@@ -1,13 +1,14 @@
 """Creates the Example and GPT classes for a user to interface with the OpenAI
 API."""
 
-import openai
 import uuid
+
+import openai
 
 
 def set_openai_key(key):
     """Sets OpenAI key."""
-    openai.api_key = GPT_KEY
+    openai.api_key = key
 
 
 class Example:

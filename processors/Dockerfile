@@ -1,6 +1,6 @@
 FROM python:3.7
 
-RUN pip install Flask gunicorn pydub opencv-python pytesseract requests pillow urllib3 openai SpeechRecognition moviepy
+RUN pip install Flask gunicorn pydub opencv-python pytesseract requests pillow urllib3 openai SpeechRecognition moviepy python-dotenv 
 RUN apt update -qqy && apt install -qqy tesseract-ocr libtesseract-dev ffmpeg libsm6 libxext6 python3-opencv libgl1-mesa-glx
 
 COPY src/ app/

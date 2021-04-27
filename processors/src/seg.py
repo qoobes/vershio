@@ -1,12 +1,14 @@
 import json
+import os
 
 import openai
+from dotenv import load_dotenv
 
 from gpt import GPT, Example
 
 
 def segment(prompt):
-    openai.api_key = "<API-KEY-REMOVED>"
+    openai.api_key = os.environ.get("GPT_KEY")
 
     gpt = GPT(temperature=0, max_tokens=500, append_output_prefix_to_query=False, output_prefix="")
 
