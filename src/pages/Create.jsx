@@ -10,7 +10,7 @@ import {
   ScaleFade,
   SlideFade,
   Textarea,
-  useToast
+  useToast,
 } from "@chakra-ui/react";
 import { useEffect, useRef, useState } from "react";
 import ImageUploader from "react-images-upload";
@@ -103,6 +103,7 @@ const Create = () => {
     console.error(
       "this is a demo due to the rules provided by OpenAI, we can't have gpt3 running live."
     );
+    console.log(currentUser);
     // the api is disabled
   };
 
