@@ -10,7 +10,7 @@ import {
   ScaleFade,
   SlideFade,
   Textarea,
-  useToast,
+  useToast
 } from "@chakra-ui/react";
 import { useEffect, useRef, useState } from "react";
 import ImageUploader from "react-images-upload";
