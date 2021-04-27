@@ -36,8 +36,8 @@ def ocr():
     try:
         images = request_json["imageUrls"]
         name = request_json["name"] 
-        userId = request_json["userId"] #bet bet go get started on the feed ill work on api call that will just take in the text
-        tags = request_json["tags"] #ayo when u get the chance check discord
+        userId = request_json["userId"]
+        tags = request_json["tags"]
     except: 
         return {"code": 400, "error": "Bad request, missing arguments"}
 

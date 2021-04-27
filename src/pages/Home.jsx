@@ -20,6 +20,7 @@ const Home = () => {
           <Heading
             mt="10rem"
             fontSize={{ base: "xx-large", lg: "xxx-large" }}
+            fontWeight = '800'
             bg="linear-gradient(89.95deg, #F49696 20.32%, #B596F4 118.37%)"
             bgClip="text"
           >
@@ -28,9 +29,9 @@ const Home = () => {
           <Heading
             mt="5rem"
             fontSize={{ base: "xx-large", lg: "xxx-large" }}
+            fontWeight='900'
             background="linear-gradient(89.95deg, #F49696 -3.89%, #15EEEE 182.75%)"
             bgClip="text"
-            fontWeight="black"
             letterSpacing="2px"
           >
             EVERYWHERE.
